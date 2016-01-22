@@ -3,7 +3,7 @@
 
 ## Usage
 1. ```npm install -g yo```
-2. ```npm install -g generator-meteor-base```
+2. ```npm install -g generator-meteor-dokku```
 3. ```yo meteor-base```
 
 ## Generated project
