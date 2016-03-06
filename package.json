@@ -1,6 +1,6 @@
 {
   "name": "generator-meteor-dokku",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Yeoman generator for creating a Meteor app optimized for Dokku.",
   "files": [
     "app"
@@ -12,7 +12,8 @@
   "keywords": [
     "yeoman-generator",
     "generator",
-    "meteor"
+    "meteor",
+    "dokku"
   ],
   "author": "Erik Gärtner",
   "license": "MIT",
