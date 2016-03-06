@@ -4,13 +4,13 @@
 ## Usage
 1. ```npm install -g yo```
 2. ```npm install -g generator-meteor-dokku```
-3. ```yo meteor-base```
+3. ```yo meteor-dokku```
 
 ## Generated project
 The following preconfigured system will be setup.
 
 ### Meteor
-A standard structed meteor project with iron router and other useful packages.
+A standard structured meteor project with iron router and other useful packages.
 
 Version: 1.2.1
 
@@ -53,15 +53,19 @@ accounts-facebook
 iron:router
 aldeed:collection2
 reywood:publish-composite
-datariot:ganalytics
+matb33:collection-hooks
+okgrow:analytics
 
 # Extra UI packages
 semantic:ui-css
 iandouglas:accounts-ui-semantic-ui
+aldeed:autoform
+aldeed:delete-button
+fabienb4:autoform-semantic-ui
 ```
 
 ### Gulp
-To help with change log generation and releasing a gulp release system is included. It uses *convetional changelog* using angular conventions.
+To help with change log generation and releasing a gulp release system is included. It uses *conventional changelog* using angular conventions.
 
 #### What it does
 * Set release packages
