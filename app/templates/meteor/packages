@@ -30,8 +30,12 @@ accounts-facebook
 iron:router
 aldeed:collection2
 reywood:publish-composite
-datariot:ganalytics
+matb33:collection-hooks
+okgrow:analytics
 
 # Extra UI packages
 semantic:ui-css
 iandouglas:accounts-ui-semantic-ui
+aldeed:autoform
+aldeed:delete-button
+fabienb4:autoform-semantic-ui

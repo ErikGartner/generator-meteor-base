@@ -7,6 +7,12 @@ var conventionalChangelog = require('gulp-conventional-changelog');
 var runSequence = require('run-sequence');
 var fs = require('fs');
 
+function getPackageJsonVersion () {
+  // We parse the json file instead of using require because require caches
+  // multiple calls so the version number won't be updated
+  return JSON.parse(fs.readFileSync('./package.json', 'utf8')).version;
+}
+
 gulp.task('set-release-packages', shell.task([
   'meteor remove insecure',
   'meteor remove autopublish',
@@ -40,17 +46,7 @@ gulp.task('changelog', function () {
 
 gulp.task('tag-release', function (cb) {
   var version = getPackageJsonVersion();
-  git.tag('v' + version, 'Created Tag for version: ' + version, function (error) {
-    if (error) {
-      return cb(error);
-    }
-  });
-  git.push('origin', 'master', {args: '--tags'}, cb);
-  function getPackageJsonVersion () {
-    // We parse the json file instead of using require because require caches
-    // multiple calls so the version number won't be updated
-    return JSON.parse(fs.readFileSync('./package.json', 'utf8')).version;
-  }
+  git.tag(version, 'Created Tag for version: ' + version, cb);
 });
 
 gulp.task('commit-changes', function () {
@@ -62,7 +58,6 @@ gulp.task('commit-changes', function () {
 gulp.task('push-changes', function (cb) {
   git.push('origin', 'master', cb);
 });
-
 
 gulp.task('deploy-dokku', function(cb) {
   console.log('Edit .gulp/gulpfile.js to deploy to Dokku/Heroku!');
